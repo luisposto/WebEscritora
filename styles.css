@@ -1,0 +1,225 @@
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- NAVBAR ---- */
+.navbar {
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+.logo {
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* ---- MENU LINKS ---- */
+.menu-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+.menu-links li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.menu-links li a:hover {
+  color: #00b14f;
+}
+
+/* ---- HAMBURGUESA ---- */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+}
+
+/* ---- RESPONSIVE MENU ---- */
+@media (max-width: 900px) {
+  .nav-container {
+    padding: 10px 8px;
+  }
+  .menu-links {
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    flex-direction: column;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 2px 8px #aaa;
+    border-radius: 10px;
+    width: 170px;
+    align-items: flex-end;
+    padding: 18px 0 18px 0;
+    display: none;
+    z-index: 99;
+  }
+  .menu-links.show {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ---- SECCIONES ---- */
+.vh {
+  min-height: 100vh;
+  padding: 90px 0 40px 0;
+  border-bottom: 1px solid #ccc;
+  background: white;
+}
+.section-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+/* ---- FONDO INICIO ---- */
+.bg-inicio {
+  width: 98,5vw;
+  min-height: 100vh;
+  background: url('img/fondo.jpg') no-repeat center center/cover;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* el contenido va abajo */
+}
+
+/* Overlay oscuro */
+.bg-inicio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+.bg-inicio .section-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- FORMULARIOS ---- */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+form input, form textarea, form button {
+  padding: 10px;
+  font-size: 1em;
+}
+form button {
+  background: #00b14f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+form button:hover {
+  background: #00963c;
+}
+.text-muted {
+  color: #666;
+  font-size: 0.95em;
+  margin-top: 12px;
+}
+
+/* ---- MAPA ---- */
+.vh-mapa {
+  width: 100vw;
+  min-height: 60vh;    /* Ajustá el alto mínimo como quieras */
+  padding: 50px 0 0 0; /* Padding top para el título */
+  background: #fff;
+  margin-left: calc(50% - 50vw); /* Para que sea full width aunque la página esté centrada */
+  position: relative;
+}
+
+.mapa-titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #22346b;
+  z-index: 2;
+  position: relative;
+}
+
+.mapa-full {
+  width: 100vw;
+  height: 60vh;        /* Ajustá altura visual aquí */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.mapa-full iframe {
+  width: 100vw;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+
+/* ---- RESPONSIVE DETALLES ---- */
+@media (max-width: 600px) {
+  .vh {
+    padding: 80px 10px 20px 5px;
+  }
+  .section-container {
+    padding: 0 5px;
+  }
+  .mapa-contenedor {
+    max-width: 100%;
+  }
+	.bg-inicio {
+    background-position: center 30%;
+  }
+}
+
+
+
+
